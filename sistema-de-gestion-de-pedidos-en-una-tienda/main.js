@@ -51,3 +51,14 @@ if (!pedido) {
 let total = pedido.productos.reduce((suma, producto) => suma + (producto.precio * producto.cantidad), 0)
     console.log(`El total a pagar por el pedido ${id} es: $${total}`)
 }
+
+function pedidosPorEstado() {
+let estado = prompt("Ingrese el estado de los pedidos a buscar (pendiente/enviado/entregado):").toLowerCase()
+let filtrados = pedidos.filter(p => p.estado === estado)
+
+if (filtrados.length === 0) {
+    console.log("No hay pedidos con ese estado.")
+    } else {
+    console.log("Pedidos encontrados:", filtrados)
+    }
+}
