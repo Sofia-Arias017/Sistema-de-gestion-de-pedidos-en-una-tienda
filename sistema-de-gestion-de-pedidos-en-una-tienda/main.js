@@ -38,3 +38,16 @@ let pedido = {
 pedidos.push(pedido)
 console.log("Pedido agregado con éxito.")
 }
+
+function calcularTotalPedido() {
+let id = Number(prompt("Ingrese el ID del pedido a calcular:"))
+let pedido = pedidos.find(p => p.id === id)
+
+if (!pedido) {
+    console.log("Pedido no encontrado.")
+    return
+    }
+
+let total = pedido.productos.reduce((suma, producto) => suma + (producto.precio * producto.cantidad), 0)
+    console.log(`El total a pagar por el pedido ${id} es: $${total}`)
+}
