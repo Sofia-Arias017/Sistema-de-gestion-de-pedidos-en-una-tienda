@@ -102,3 +102,51 @@ try {
     console.log("Error al importar JSON, formato inválido.")
     }
 }
+
+function menu() {
+let opcion
+do {
+    opcion = prompt(
+        "Seleccione una opción:\n" +
+        "1. Agregar pedido\n" +
+        "2. Calcular total de un pedido\n" +
+        "3. Buscar pedidos por estado\n" +
+        "4. Buscar pedidos por cliente\n" +
+        "5. Actualizar estado de un pedido\n" +
+        "6. Exportar pedidos a JSON\n" +
+        "7. Importar pedidos desde JSON\n" +
+        "8. Salir"
+        )
+
+    switch (opcion) {
+        case "1":
+            agregarPedido()
+            break
+        case "2":
+            calcularTotalPedido()
+            break
+        case "3":
+            pedidosPorEstado()
+            break
+        case "4":
+            buscarPedidosPorCliente()
+            break
+        case "5":
+            actualizarEstadoPedido()
+            break
+        case "6":
+            exportarPedidosJSON()
+            break
+        case "7":
+            importarPedidosJSON()
+            break
+        case "8":
+            console.log("Saliendo del sistema.")
+            break
+        default:
+            console.log("Opción no válida, intente de nuevo.")
+        }
+    } while (opcion !== "8")
+}
+
+menu()
