@@ -73,3 +73,17 @@ if (pedidosCliente.length === 0) {
     console.log("Pedidos del cliente:", pedidosCliente)
     }
 }
+
+function actualizarEstadoPedido() {
+let id = Number(prompt("Ingrese el ID del pedido a actualizar:"))
+let pedido = pedidos.find(p => p.id === id)
+
+if (!pedido) {
+    console.log("Pedido no encontrado.")
+    return
+    }
+
+let nuevoEstado = prompt("Ingrese el nuevo estado del pedido (pendiente/enviado/entregado):").toLowerCase()
+pedido.estado = nuevoEstado
+console.log("Estado del pedido actualizado con éxito.")
+}
