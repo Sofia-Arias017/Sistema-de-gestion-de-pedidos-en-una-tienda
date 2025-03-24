@@ -62,3 +62,14 @@ if (filtrados.length === 0) {
     console.log("Pedidos encontrados:", filtrados)
     }
 }
+
+function buscarPedidosPorCliente() {
+let correo = prompt("Ingrese el correo del cliente:")
+let pedidosCliente = pedidos.filter(p => p.cliente.correo === correo)
+
+if (pedidosCliente.length === 0) {
+    console.log("No hay pedidos registrados con ese correo.")
+    } else {
+    console.log("Pedidos del cliente:", pedidosCliente)
+    }
+}
