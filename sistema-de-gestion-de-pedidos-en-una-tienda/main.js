@@ -87,3 +87,8 @@ let nuevoEstado = prompt("Ingrese el nuevo estado del pedido (pendiente/enviado/
 pedido.estado = nuevoEstado
 console.log("Estado del pedido actualizado con éxito.")
 }
+
+function exportarPedidosJSON() {
+let json = JSON.stringify(pedidos, null, 2)
+    console.log("Pedidos exportados en formato JSON:", json)
+}
