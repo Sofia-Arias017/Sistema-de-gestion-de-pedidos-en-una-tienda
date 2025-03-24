@@ -92,3 +92,13 @@ function exportarPedidosJSON() {
 let json = JSON.stringify(pedidos, null, 2)
     console.log("Pedidos exportados en formato JSON:", json)
 }
+
+function importarPedidosJSON() {
+let json = prompt("Ingrese la cadena JSON de pedidos:")
+try {
+    pedidos = JSON.parse(json)
+    console.log("Pedidos importados con éxito.")
+    } catch (error) {
+    console.log("Error al importar JSON, formato inválido.")
+    }
+}
